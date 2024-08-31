@@ -5,8 +5,10 @@ const regex= /[^a-zA-Z0-9]/g;
 
 
 function renderText(){
+    result.replaceChildren();
   if (textInput.value === ""){
-    alert("Please input a value")    
+    alert("Please input a value");
+    return   
   }
   const renderedText=textInput.value.replace(regex,"").toLowerCase();
   //console.log(`rendered text is ${renderedText}`);
@@ -18,6 +20,8 @@ function renderText(){
   else{
     result.innerText=`${textInput.value} is not a palindrome`;
   }
+  result.classList.remove('hidden');
+
 }
 
 function getReverse
